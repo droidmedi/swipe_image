@@ -23,6 +23,7 @@ dependencies:
   flutter_page_indicator: ^0.0.3
   swipedetector: ^1.2.0
   flutter_swiper: ^1.1.6
+  share: ^0.6.3+6
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -42,6 +43,46 @@ flutter:
     - assets/images/image1.jpg
     - assets/images/image2.jpg
     - assets/images/image3.jpg
+    - assets/images/a.png
+    - assets/images/b.png
+    - assets/images/c.png
+    - assets/images/d.png
+    - assets/images/e.png
+    - assets/images/f.png
+    - assets/images/g.png
+    - assets/images/h.png
+    - assets/images/i.png
+    - assets/images/j.png
+    - assets/images/k.png
+    - assets/images/l.png
+    - assets/images/m.png
+    - assets/images/n.png
+    - assets/images/o.png
+    - assets/images/p.png
+    - assets/images/q.png
+    - assets/images/r.png
+    - assets/images/s.png
+    - assets/images/t.png
+    - assets/images/u.png
+    - assets/images/v.png
+    - assets/images/w.png
+    - assets/images/x.png
+    - assets/images/y.png
+    - assets/images/z.png
+    - assets/numbers/1.png
+    - assets/numbers/2.png
+    - assets/numbers/3.png
+    - assets/numbers/4.png
+    - assets/numbers/5.png
+    - assets/numbers/6.png
+    - assets/numbers/7.png
+    - assets/numbers/8.png
+    - assets/numbers/9.png
+    - assets/imagebutton/bb.png
+    - assets/imagebutton/nn.png
+    - assets/imagebutton/nnn.png
+    - assets/imagebutton/aaa.png
+    - assets/imagebutton/11.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

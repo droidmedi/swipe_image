@@ -1,86 +1,120 @@
 import 'package:flutter/material.dart';
+import 'alphabets.dart';
+import 'numbers.dart';
+import 'test.dart';
+import 'package:share/share.dart';
 
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_page_indicator/flutter_page_indicator.dart';
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: Home(),
+  ));
+}
 
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.green,
+    return Scaffold(
+      //decoration: new BoxDecoration(color: Colors.red),
+      appBar: AppBar(
+        title: Text('Learn Alphabets and Numbers'),
+        actions: <Widget>[
+          new IconButton(
+            icon: Icon(Icons.share),
+            onPressed: (){
+              final RenderBox box = context.findRenderObject();
+              Share.share('lien app ara berra3',
+                  sharePositionOrigin:
+                  box.localToGlobal(Offset.zero) &
+                  box.size);
+            },
+          ),
+        ],
       ),
-      home: new MyHomePage(title: 'Swipe App'),
+      body: new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(50.0),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: new Card(
+                  //elevation :2,
+                  //CircleAvatar:(radius: 25.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Alphabets'),
+                      Center(
+                        child: InkWell(
+                          child: Image.asset('assets/imagebutton/aaa.png'),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Alphabets()),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: new Card(
+                  //elevation :2,
+                  //CircleAvatar:(radius: 25.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('Numbers'),
+                      Center(
+
+                        child: InkWell(
+                          child: Image.asset('assets/imagebutton/nnn.png'),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Numbers()),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Center(
+                      child: RaisedButton(
+                        child: Text('share this App'),
+                        onPressed: () {
+                          final RenderBox box = context.findRenderObject();
+                          Share.share(
+                              'lien dyal application fplay stor ara berra3',
+                              sharePositionOrigin:
+                                  box.localToGlobal(Offset.zero) & box.size);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text(widget.title),
-        ),
-        body: Container(
-
-            child: Column(
-              
-              children: <Widget>[
-                 Text('index'),
-                Expanded(child:
-                new Swiper(
-                  layout: SwiperLayout.CUSTOM,
-                  customLayoutOption: new CustomLayoutOption(
-                      startIndex: -1,  /// Which index is the first item of array below
-                      stateCount: 3    /// array length
-                  ).addRotate([        // rotation of every item
-                 -380.0/40.0,
-                    0.0,
-                    45.0/180
-                  ]).addTranslate([           /// offset of every item
-                    new Offset(-390.0, -40.0),
-                    new Offset(0.0, 0.0),
-                    new Offset(370.0, -40.0)
-                  ]),
-                  itemBuilder: (BuildContext context, int index) {
-                    return new Image.asset(
-                      'assets/'+images[index],
-                      fit: BoxFit.fill,
-                    );
-                  },
-
-                  indicatorLayout: PageIndicatorLayout.COLOR,
-                  autoplay: false,
-                  itemCount: images.length,
-                  pagination: new SwiperPagination(),
-                  control: new SwiperControl(),
-                  duration: 800,
-
-                  itemHeight: 400.0,
-                  itemWidth: 300.0,
-                ),
-                )],
-            )
-        ));
-  }
-}
-
-const List<String> images = [
-  "images/cow2.jpg",
-  "images/image1.jpg",
-  "images/image2.jpg",
-  "images/image3.jpg",
-];
