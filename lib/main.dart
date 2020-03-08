@@ -17,7 +17,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       //decoration: new BoxDecoration(color: Colors.red),
       appBar: AppBar(
+
         title: Text('Learn Alphabets and Numbers'),
+
         actions: <Widget>[
           new IconButton(
             icon: Icon(Icons.share),
@@ -32,7 +34,7 @@ class Home extends StatelessWidget {
         ],
       ),
       body: new Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Column(
