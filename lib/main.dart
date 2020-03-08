@@ -17,18 +17,15 @@ class Home extends StatelessWidget {
     return Scaffold(
       //decoration: new BoxDecoration(color: Colors.red),
       appBar: AppBar(
-
         title: Text('Learn Alphabets and Numbers'),
-
         actions: <Widget>[
           new IconButton(
             icon: Icon(Icons.share),
-            onPressed: (){
+            onPressed: () {
               final RenderBox box = context.findRenderObject();
               Share.share('partager had lien app ara berra33',
                   sharePositionOrigin:
-                  box.localToGlobal(Offset.zero) &
-                  box.size);
+                      box.localToGlobal(Offset.zero) & box.size);
             },
           ),
         ],
@@ -77,7 +74,6 @@ class Home extends StatelessWidget {
                     children: <Widget>[
                       Text('Numbers'),
                       Center(
-
                         child: InkWell(
                           child: Image.asset('assets/imagebutton/nnn.png'),
                           onTap: () {
