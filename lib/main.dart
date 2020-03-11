@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
             icon: Icon(Icons.share),
             onPressed: () {
               final RenderBox box = context.findRenderObject();
-              Share.share('partager had lien app ara dima berra33',
+              Share.share('partager had lien app flwatsapp',
                   sharePositionOrigin:
                       box.localToGlobal(Offset.zero) & box.size);
             },
